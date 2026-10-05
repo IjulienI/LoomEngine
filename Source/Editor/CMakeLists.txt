@@ -1,7 +1,6 @@
-add_library(Editor STATIC
+add_executable(Editor
         Src/EditorMain.cpp
 )
-add_library(Loom::Editor ALIAS Editor)
 
 target_include_directories(Editor
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include
@@ -12,7 +11,6 @@ target_include_directories(Editor
 # Dependencies
 #----------------------------------------
 target_link_libraries(Editor
-        PUBLIC Loom::Platform
-        PRIVATE SDL3::SDL3)
+        PUBLIC Loom::Engine)
 
 loom_set_warnings(Editor)

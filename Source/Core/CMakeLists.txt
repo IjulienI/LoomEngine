@@ -1,5 +1,7 @@
 add_library(Core STATIC
-        Include/Base/Log.h
+        Include/Core/Log/Log.h
+        Include/Core/Core.h
+        Include/Core/Base/SmartPointer.h
 )
 add_library(Loom::Core ALIAS Core)
 
