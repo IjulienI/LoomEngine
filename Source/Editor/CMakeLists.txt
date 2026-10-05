@@ -11,6 +11,8 @@ target_include_directories(Editor
 # Dependencies
 #----------------------------------------
 target_link_libraries(Editor
-        PUBLIC Loom::Engine)
+        PRIVATE Loom::Engine)
+
+target_compile_definitions(Editor PRIVATE WITH_EDITOR=1)
 
 loom_set_warnings(Editor)

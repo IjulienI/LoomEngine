@@ -1,10 +1,7 @@
+#include <iostream>
 
-int main(const int /*argc*/, const char** /*argv*/)
+int main()
 {
-    int Depth = 0;
-    while (Depth < 5)
-    {
-        ++Depth;
-    }
+    std::cout << "Hello World!" << std::endl;
     return 0;
 }

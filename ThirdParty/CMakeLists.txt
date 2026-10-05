@@ -35,4 +35,11 @@ FetchContent_Declare(spdlog
         SYSTEM
 )
 
-FetchContent_MakeAvailable(SDL3 glm spdlog)
+FetchContent_Declare(tracy
+        GIT_REPOSITORY https://github.com/wolfpld/tracy.git
+        GIT_TAG v0.14.1
+        GIT_SHALLOW TRUE
+        SYSTEM
+)
+
+FetchContent_MakeAvailable(SDL3 glm spdlog tracy)

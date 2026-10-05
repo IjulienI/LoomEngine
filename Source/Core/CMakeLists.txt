@@ -2,6 +2,8 @@ add_library(Core STATIC
         Include/Core/Log/Log.h
         Include/Core/Core.h
         Include/Core/Base/SmartPointer.h
+        Include/Core/Base/Memory.h
+        Src/Base/Memory.cpp
 )
 add_library(Loom::Core ALIAS Core)
 
@@ -14,7 +16,7 @@ target_include_directories(Core
 # Dependencies3
 #----------------------------------------
 target_link_libraries(Core
-        PUBLIC glm::glm
+        PUBLIC glm::glm Tracy::TracyClient
         PRIVATE spdlog::spdlog
 )
 
