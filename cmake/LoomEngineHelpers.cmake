@@ -1,0 +1,7 @@
+function(Loom_set_warnings target)
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /W4 /permissive- /utf-8 /Zc:preprocessor)
+    else ()
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Wshadow)
+    endif ()
+endfunction()

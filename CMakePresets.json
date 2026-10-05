@@ -1,0 +1,50 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": { "major": 4, "minor": 3, "patch": 0},
+  "configurePresets":
+  [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/Build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "LOOM_BUILD_CONFIG": "Debug"
+      }
+    },
+    {
+      "name": "development",
+      "displayName": "Development",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "LOOM_BUILD_CONFIG": "Development"
+      }
+    },
+    {
+      "name": "shipping",
+      "displayName": "Shipping",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "LOOM_BUILD_CONFIG": "Shipping",
+        "LOOM_BUILD_EDITOR": "OFF"
+      }
+    }
+  ],
+  "buildPresets":
+  [
+    { "name": "debug", "configurePreset": "debug" },
+    { "name": "development", "configurePreset": "development" },
+    { "name": "shipping", "configurePreset": "shipping" }
+  ]
+}
